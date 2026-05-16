@@ -130,3 +130,39 @@
 }
 @utility shadow-glow { box-shadow: var(--shadow-glow); }
 @utility shadow-card { box-shadow: var(--shadow-card); }
+
+@utility glass {
+  background-color: color-mix(in oklab, var(--card) 55%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+@utility gradient-text {
+  background-image: linear-gradient(135deg, var(--brand) 0%, var(--brand-pink) 50%, var(--brand-2) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@utility glow-primary {
+  box-shadow: 0 0 30px -5px color-mix(in oklab, var(--brand) 50%, transparent);
+}
+@utility glow-accent {
+  box-shadow: 0 0 30px -5px color-mix(in oklab, var(--brand-2) 50%, transparent);
+}
+@utility bg-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--border) 35%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--border) 35%, transparent) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+@utility gradient-border {
+  position: relative;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+@utility animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
